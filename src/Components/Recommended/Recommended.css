@@ -1,0 +1,50 @@
+.recommended {
+    flex-basis: 30%;
+}
+
+.side-video-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 2.5px;
+    transition: all 2s infinite;
+}
+
+.side-video-list img {
+    flex-basis: 49%;
+    width: 50%;
+    height: 120px;
+    border-radius: 5px;
+}
+
+.side-video-list:hover {
+    background: #dbdada;
+    border-radius: 5px;
+    transform: scale(1.01);
+}
+
+.video-info {
+    flex-basis: 49%;
+}
+
+.video-info h4 {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.video-info p {
+    font-size: 12px;
+    color: #555;
+}
+
+.video-info .view {
+    font-size: 11px;
+    color: #9e9b9b;
+}
+
+@media (max-width:900px) {
+    .recommended {
+        flex-basis: 100% !important;
+    }
+}
