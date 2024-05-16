@@ -16,7 +16,7 @@ const Recommended = ({ categoryId }) => {
 
     const fetchData = async () => {
         try {
-            const relatedVideoUrl = `http://localhost:3000/api/recommended-videos?videoCategoryId${categoryId}`;
+            const relatedVideoUrl = `https://backend-youtube-clone-with-youtube-api.onrender.com/api/recommended-videos?videoCategoryId${categoryId}`;
             const response = await fetch(relatedVideoUrl);
             const data = await response.json();
             setApiData(data.data.items);

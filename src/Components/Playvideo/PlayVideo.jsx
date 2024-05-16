@@ -15,7 +15,7 @@ const PlayVideo = ({ videoId }) => {
 
     const fetchVideoData = async () => {
         try {
-            const videoDetailsUrl = `http://localhost:3000/api/videos?id=${videoId}`;
+            const videoDetailsUrl = `https://backend-youtube-clone-with-youtube-api.onrender.com/api/videos?id=${videoId}`;
             const response = await fetch(videoDetailsUrl);
             if (!response.ok) {
                 throw new Error('Failed to fetch video data');
@@ -30,7 +30,7 @@ const PlayVideo = ({ videoId }) => {
     const fetchOtherData = async () => {
         try {
             if (apiData && apiData.snippet.channelId) {
-                const channelDataUrl = `http://localhost:3000/api/channel-data?channelId=${apiData.snippet.channelId}`;
+                const channelDataUrl = `https://backend-youtube-clone-with-youtube-api.onrender.com/api/channel-data?channelId=${apiData.snippet.channelId}`;
                 const channelResponse = await fetch(channelDataUrl);
                 if (!channelResponse.ok) {
                     throw new Error('Failed to fetch channel data');
@@ -41,7 +41,7 @@ const PlayVideo = ({ videoId }) => {
                 console.error('apiData or apiData.snippet is undefined or does not contain channelId.');
             }
 
-            const commentsUrl = `http://localhost:3000/api/video-comments?videoId=${videoId}`;
+            const commentsUrl = `https://backend-youtube-clone-with-youtube-api.onrender.com/api/video-comments?videoId=${videoId}`;
             const commentsResponse = await fetch(commentsUrl);
             if (!commentsResponse.ok) {
                 throw new Error('Failed to fetch comments data');

@@ -23,7 +23,7 @@ const Feed = ({ category }) => {
 
     const fetchData = async () => {
         try {
-            const dataUrl = `http://localhost:3000/api/feed-videos?videoCategoryId=${category}`
+            const dataUrl = `https://backend-youtube-clone-with-youtube-api.onrender.com/api/feed-videos?videoCategoryId=${category}`
             await fetch(dataUrl)
                 .then(res => res.json())
                 .then(data => setData(data.data.items))
@@ -31,7 +31,7 @@ const Feed = ({ category }) => {
             console.log("Error Fetching Data", error);
         }
     }
-    
+
     return (
         <div className="feed">
             {data && data.map((item, index) => {
